@@ -13,5 +13,5 @@ public class PersonaDto {
     private Long id;
     private String nombre;
     private String email;
-    private Boolean eliminado = false;
+    private boolean eliminado;
 }
