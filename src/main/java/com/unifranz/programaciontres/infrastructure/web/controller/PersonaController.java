@@ -23,13 +23,31 @@ public class PersonaController {
     @GetMapping
     public ResponseEntity<List<PersonaResumenDto>> listar(
             @RequestParam(required = false) Long id,
-            @RequestParam(required = false) String genero,
-            @RequestParam(required = false) String artista) {
-        return ResponseEntity.ok(personaService.listar(id, genero, artista));
+            @RequestParam(required = false) String nombre,
+            @RequestParam(required = false) String email) {
+        return ResponseEntity.ok(personaService.listar(id, nombre, email));
     }
 
     @GetMapping("/detalle")
     public ResponseEntity<List<PersonaDto>> listarDetalle() {
         return ResponseEntity.ok(personaService.listarDetalle());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PersonaDto> editar(
+            @PathVariable Long id,
+            @RequestBody PersonaDto personaDto) {
+        return ResponseEntity.ok(personaService.editar(id, personaDto));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<PersonaDto> eliminar(@PathVariable Long id) {
+        return ResponseEntity.ok(personaService.eliminar(id));
+    }
+
+    @DeleteMapping("/{id}/fisico")
+    public ResponseEntity<Void> eliminarFisico(@PathVariable Long id) {
+        personaService.eliminarFisico(id);
+        return ResponseEntity.noContent().build();
     }
 }

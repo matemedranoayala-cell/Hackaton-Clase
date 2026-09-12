@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface PersonaService {
     PersonaResumenDto guardar(PersonaDto personaDto);
-    List<PersonaResumenDto> listar(Long id, String genero, String artista);
+    List<PersonaResumenDto> listar(Long id, String nombre, String email);
     List<PersonaDto> listarDetalle();
+    PersonaDto editar(Long id, PersonaDto personaDto);
+    PersonaDto eliminar(Long id);
+    void eliminarFisico(Long id);
 }

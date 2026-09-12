@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PersonaDto {
     private Long id;
-    private String titulo;
-    private String artista;
-    private String genero;
+    private String nombre;
+    private String email;
+    private boolean eliminado;
 }

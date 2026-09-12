@@ -10,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonaResumenDto {
-    private String titulo;
-    private String genero;
+    private Long id;
+    private String nombre;
+    private String email;
 }

@@ -18,7 +18,7 @@ public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
-    private String artista;
-    private String genero;
+    private String nombre;
+    private String email;
+    private boolean eliminado = false;
 }
